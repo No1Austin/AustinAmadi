@@ -16,9 +16,9 @@ const education = [
     degree: "Computer Science",
     school: "National Open University",
     location: "Lagos",
-    date: "In Progress",
+    date: "2017 - 2019",
   },
-  
+
   {
     degree: "HND in Surveying and Geoinformatics",
     school: "Federal Polytechnic Nekede",
