@@ -12,7 +12,13 @@ const education = [
     location: "Canada",
     date: "Jan 2024",
   },
-
+{
+    degree: "Computer Science",
+    school: "National Open University",
+    location: "Lagos",
+    date: "In Progress",
+  },
+  
   {
     degree: "HND in Surveying and Geoinformatics",
     school: "Federal Polytechnic Nekede",
@@ -20,12 +26,7 @@ const education = [
     date: "May 2010 - Jun 2016",
   },
 
-  {
-    degree: "Computer Science",
-    school: "National Open University",
-    location: "Lagos",
-    date: "In Progress",
-  },
+  
 ];
 
 export default function Education() {
