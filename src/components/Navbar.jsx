@@ -16,7 +16,7 @@ export default function Navbar() {
     <header className="fixed left-0 top-0 z-[9999] w-full border-b border-white/10 bg-[#050816]/95 backdrop-blur-xl">
       
       {/* DESKTOP NAV */}
-      <nav className="mx-auto hidden max-w-7xl items-center justify-center px-5 py-3 md:flex">
+      <nav className="mx-auto hidden max-w-7xl items-center justify-center px-5 py-3 lg:flex">
         <div className="flex items-center gap-8">
           
           {/* Profile Image With Hover Popup */}
@@ -51,7 +51,7 @@ export default function Navbar() {
       </nav>
 
       {/* MOBILE NAV */}
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 md:hidden">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:hidden">
         
         <img
           src="/profile.png"
