@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   const links = [
     ["Home", "#home"],
     ["Projects", "#projects"],
@@ -9,37 +13,52 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-white/5 bg-[#050816]/80 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-7xl items-center justify-center px-6 py-5">
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-          <div className="group relative">
-            <img
-              src="/profile.png"
-              alt="Austin Amadi"
-              className="h-10 w-10 rounded-full border border-cyan-400/40 object-cover object-top shadow-md shadow-cyan-500/20"
-            />
+    <header className="fixed top-0 z-50 w-full border-b border-white/5 bg-[#050816]/90 backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
+        <img
+          src="/profile.png"
+          alt="Austin Amadi"
+          className="h-10 w-10 rounded-full border border-cyan-400/40 object-cover object-top"
+        />
 
-            <div className="pointer-events-none absolute left-1/2 top-14 z-50 w-56 -translate-x-1/2 scale-90 overflow-hidden rounded-3xl border border-cyan-400/30 bg-[#050816] opacity-0 shadow-2xl shadow-cyan-500/20 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100">
-              <img
-                src="/profile.png"
-                alt="Austin Amadi"
-                className="h-72 w-full object-cover object-top"
-              />
-            </div>
-          </div>
-
+        <div className="hidden items-center gap-10 md:flex">
           {links.map(([label, href]) => (
             <a
               key={label}
               href={href}
-              className="relative text-xs font-medium uppercase tracking-[0.25em] text-slate-400 transition-all duration-300 hover:text-cyan-400"
+              className="text-xs font-medium uppercase tracking-[0.25em] text-slate-400 transition hover:text-cyan-400"
             >
               {label}
-              <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-cyan-400 transition-all duration-300 hover:w-full" />
             </a>
           ))}
         </div>
+
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex flex-col gap-1.5 md:hidden"
+        >
+          <span className="h-0.5 w-7 bg-white" />
+          <span className="h-0.5 w-7 bg-white" />
+          <span className="h-0.5 w-7 bg-white" />
+        </button>
       </nav>
+
+      {open && (
+        <div className="border-t border-white/10 bg-[#050816] px-5 py-5 md:hidden">
+          <div className="flex flex-col gap-4">
+            {links.map(([label, href]) => (
+              <a
+                key={label}
+                href={href}
+                onClick={() => setOpen(false)}
+                className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-300 hover:text-cyan-400"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
   );
 }
