@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] items-start justify-center overflow-hidden bg-[#050816] px-5 pt-20 pb-6 text-white lg:items-center lg:px-6 lg:pt-28 lg:pb-28"
+      className="relative flex min-h-[78svh] items-start justify-center overflow-hidden bg-[#050816] px-5 pt-28 pb-8 text-white md:min-h-screen md:items-center md:px-6 md:pt-28 md:pb-28"
     >
       <div className="absolute left-[-10%] top-20 h-80 w-80 rounded-full bg-cyan-500/10 blur-3xl" />
       <div className="absolute bottom-0 right-[-10%] h-96 w-96 rounded-full bg-purple-600/10 blur-3xl" />
