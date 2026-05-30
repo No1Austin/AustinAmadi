@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* =========================================
+   SHOOTING STAR
+========================================= */
+
+.shooting-star {
+  position: absolute;
+  top: 0;
+  right: -200px;
+  width: 180px;
+  height: 2px;
+
+  background: linear-gradient(
+    to left,
+    rgba(255,255,255,1),
+    rgba(56,189,248,0.8),
+    rgba(124,58,237,0.4),
+    transparent
+  );
+
+  border-radius: 999px;
+
+  filter: drop-shadow(0 0 12px #38bdf8);
+
+  transform: rotate(-35deg);
+
+  animation: shootingStar 6s linear infinite;
+}
+
+.shooting-star::before {
+  content: "";
+
+  position: absolute;
+
+  right: -6px;
+  top: -4px;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 999px;
+
+  background: white;
+
+  box-shadow:
+    0 0 10px white,
+    0 0 20px #38bdf8,
+    0 0 40px #7c3aed;
+}
+
+@keyframes shootingStar {
+  0% {
+    transform: translate(0, 0) rotate(-35deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-140vw, 120vh) rotate(-35deg);
+    opacity: 0;
+  }
+}
+
+@keyframes projectFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes skillFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expertiseFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
